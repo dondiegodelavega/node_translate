@@ -1,4 +1,4 @@
-# node_translate
+# node translate
 
 Node translate is a basic text translation web application which supports ENGLISH , FRENCH and SPANISH languegues (Yendex Translate API).
 It has implemented using node.js , Express.js and MongoDB.
