@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1 NodeJs Translator
+
+  div.container
+    hr
+    div.row
+      div(class="col-md-6 form-group")
+        label(for="textFrom") FROM :
+        select(class="form-control" id="langFrom")
+          option(value="en" selected="selected") ENGLISH
+          option(value="fr") FRENCH
+          option(value="es") SPANISH
+        textarea(id="textFrom" class="form-control" rows="5")
+      div(class="col-md-6 form-group")
+        label(for="textTo") TO :
+        select(class="form-control" id="langTo")
+          option(value="en") ENGLISH
+          option(value="fr" selected="selected") FRENCH
+          option(value="es") SPANISH
+        textarea(id="textTo" class="form-control" rows="5" readonly="readonly")
+    input(type="button" class="btn-default btn-lg btn-block" id="btnTranslate" value="TRANSLATE")
