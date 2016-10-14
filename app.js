@@ -4,14 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-//import the mongodb native drivers.
-var mongodb = require('mongodb');
-var routes = require('./routes/index');
 
-//connect to a mongodb server.
-var database = mongodb.MongoClient;
-//Connection URL. where mongodb server is running.
-var databaseUrl = 'mongodb://localhost:27017/maltem';
+var routes = require('./routes/index');
 
 var app = express();
 
@@ -26,17 +20,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Make our db accessible to our router
-app.use(function(req,res,next){
-  req.database = database;
-  next();
-});
-// Make our db url accessible to our router
-app.use(function(req,res,next){
-  req.databaseUrl = databaseUrl;
-  next();
-});
 
 app.use('/', routes);
 
@@ -73,6 +56,3 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-
-
-// trnsl.1.1.20161012T193859Z.d17a1f444b9b3715.a2b0e9b74bd1067b51e6ef611eec6e6248639035

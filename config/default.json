@@ -1,0 +1,14 @@
+{
+  "app": {
+    "url" : {
+      "yendex": "https://translate.yandex.net/api/v1.5/tr.json/translate",
+      "root": "http://localhost:3000"
+    },
+    "database":{
+      "connectionString":"mongodb://admin:pass@localhost:27017/maltem_db"
+    },
+    "key" : {
+      "yendex": "trnsl.1.1.20161012T193859Z.d17a1f444b9b3715.a2b0e9b74bd1067b51e6ef611eec6e6248639035"
+    }
+  }
+}
